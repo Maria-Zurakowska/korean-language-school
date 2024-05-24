@@ -5,5 +5,5 @@ public class School {
   // String address do zmiany
   private Employee employee;
 
-  public Client getCourseClient
+  public Client getCourseClient;
 }
