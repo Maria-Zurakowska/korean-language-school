@@ -2,19 +2,40 @@ package com.koreanlanguageschool;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.List;
-
 @Setter
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor
 public class Course {
 
   private String courseName;
 
-  List<Client> courseClients = new ArrayList<>();
+  private List<Client> courseClients;
+
+  private Course(CourseBuilder courseBuilder) {
+    this.courseName = courseBuilder.courseName;
+    this.courseClients = courseBuilder.courseClients;
+  }
+
+  public static class CourseBuilder {
+
+    private String courseName;
+    private List<Client> courseClients;
+
+    public CourseBuilder withCourseName(String courseName) {
+      this.courseName = courseName;
+      return this;
+    }
+
+    public CourseBuilder withCourseClients(List<Client> courseClients) {
+      this.courseClients = courseClients;
+      return this;
+    }
+
+    public Course build() {
+      return new Course(this);
+    }
+  }
 }
