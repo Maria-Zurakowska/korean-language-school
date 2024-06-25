@@ -1,6 +1,5 @@
 package com.koreanlanguageschool;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.ArrayList;
@@ -12,6 +11,13 @@ public class KoreanLanguageSchoolApplication {
 	public static void main(String[] args) {
 		//SpringApplication.run(KoreanLanguageSchoolApplication.class, args);
 
+		getCourseClients();
+
+
+
+	}
+
+	private static void getCourseClients() {
 		ListBasedCourseOperator lbo = new ListBasedCourseOperator();
 		List<Client> clients = new ArrayList<>();
 
