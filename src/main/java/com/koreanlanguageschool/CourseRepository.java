@@ -14,7 +14,7 @@ public interface CourseRepository{
 
   public void deleteCourse(String courseName);
 
-  public String findCourse(String courseName);
+  public Course findCourse(String courseName);
 
   public void updateCourseClientList(List<Client> courseClientList, Course course);
 }
