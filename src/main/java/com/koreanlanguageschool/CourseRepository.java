@@ -2,7 +2,7 @@ package com.koreanlanguageschool;
 
 import java.util.List;
 
-public interface CourseRepository{
+public interface CourseRepository {
 
   // 2 metody do uzupełnienia
 

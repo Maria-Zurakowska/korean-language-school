@@ -11,7 +11,7 @@ public class ListBasedCourseOperator implements CourseRepository {
   public Course createCourse(String courseName) {
 
     Course course = new Course(courseName, new ArrayList<>());
-    //course.setCourseName(courseName);
+    course.setCourseName(courseName);
     courses.add(course);
     return course;
   }
