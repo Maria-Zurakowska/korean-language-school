@@ -12,9 +12,8 @@ public class KoreanLanguageSchoolApplication {
 	public static void main(String[] args) {
 		//SpringApplication.run(KoreanLanguageSchoolApplication.class, args);
 
-		getCourseClients();
-
-
+		//getCourseClients();
+		createClient();
 
 	}
 
@@ -35,5 +34,14 @@ public class KoreanLanguageSchoolApplication {
 		List<Client> clientsByCourse = lbo.findAllCourseClients(course1.getCourseName());
 
 		System.out.println(clientsByCourse);
+	}
+
+	private static void createClient(){
+
+		ClientOperator clientOperator = new ClientOperator();
+
+		Client wiola = clientOperator.createClient("Wiola", "Baran");
+
+		System.out.println(wiola);
 	}
 }
