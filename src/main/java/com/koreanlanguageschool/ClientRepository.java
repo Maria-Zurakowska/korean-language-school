@@ -10,7 +10,7 @@ public interface ClientRepository {
 
     public Client createClient(String name, String lastName);
 
-    public void updateClient(Client client);
+    public void updateClient(Client client, String name, String lastName);
 
     public void deleteClient(Client client);
 
