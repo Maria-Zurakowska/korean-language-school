@@ -13,8 +13,11 @@ public class KoreanLanguageSchoolApplication {
 		//SpringApplication.run(KoreanLanguageSchoolApplication.class, args);
 
 		//getCourseClients();
-		createClient();
 
+		ClientOperator clientOperator = new ClientOperator();
+		Client wiola = clientOperator.createClient("Wiola", "Baran");
+
+		System.out.println(wiola);
 	}
 
 	private static void getCourseClients() {
@@ -34,14 +37,5 @@ public class KoreanLanguageSchoolApplication {
 		List<Client> clientsByCourse = lbo.findAllCourseClients(course1.getCourseName());
 
 		System.out.println(clientsByCourse);
-	}
-
-	private static void createClient(){
-
-		ClientOperator clientOperator = new ClientOperator();
-
-		Client wiola = clientOperator.createClient("Wiola", "Baran");
-
-		System.out.println(wiola);
 	}
 }
