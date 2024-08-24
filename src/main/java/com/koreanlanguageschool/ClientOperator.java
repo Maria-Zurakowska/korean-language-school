@@ -25,11 +25,18 @@ public class ClientOperator implements ClientRepository{
     }
 
     @Override
-    public Client findClientByLastName(String lastName) {
-        return null;
+    public List<Client> findClientsByLastName(String lastName) {
+
+        List<Client> clientsByLastName = new ArrayList<>();
+
+        if(lastName != null) {
+            String lastNameFirstLetterUpperCase = lastName.substring(0, 1).toUpperCase() + lastName.substring(1);
+            clientsByLastName = clients.stream()
+                    .filter(client -> client.getLastName().equals(lastNameFirstLetterUpperCase))
+                    .toList();
+        }
+        return clientsByLastName;
     }
-
-
 
     @Override
     public void updateClient(Client client) {

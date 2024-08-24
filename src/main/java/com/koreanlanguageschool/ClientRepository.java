@@ -6,7 +6,7 @@ public interface ClientRepository {
 
     public void printAllClients();
 
-    public Client findClientByLastName(String lastName);
+    public List<Client> findClientsByLastName(String lastName);
 
     public Client createClient(String name, String lastName);
 
