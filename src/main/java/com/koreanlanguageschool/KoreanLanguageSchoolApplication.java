@@ -28,7 +28,11 @@ public class KoreanLanguageSchoolApplication {
         clientOperator.updateClient(wiola, "Iza", "Krzak");
         clientOperator.printAllClients();
 
-        clientOperator.updateClient(new Client("Magda", "Baran"), "Iza", "Krzak");
+//        clientOperator.updateClient(new Client("Magda", "Baran"), "Iza", "Krzak");
+//        clientOperator.printAllClients();
+
+        System.out.println("--*--*--*--");
+        clientOperator.deleteClient(wiola);
         clientOperator.printAllClients();
     }
 

@@ -58,5 +58,6 @@ public class ClientOperator implements ClientRepository {
     @Override
     public void deleteClient(Client client) {
 
+        clients.remove(client);
     }
 }
