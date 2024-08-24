@@ -16,8 +16,9 @@ public class KoreanLanguageSchoolApplication {
 
 		ClientOperator clientOperator = new ClientOperator();
 		Client wiola = clientOperator.createClient("Wiola", "Baran");
+		Client ola = clientOperator.createClient("Ola", "Nowak");
 
-		System.out.println(wiola);
+		clientOperator.printAllClients();
 	}
 
 	private static void getCourseClients() {

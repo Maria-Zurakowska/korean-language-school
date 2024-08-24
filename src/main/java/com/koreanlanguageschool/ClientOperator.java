@@ -15,8 +15,13 @@ public class ClientOperator implements ClientRepository{
     }
 
     @Override
-    public List<Client> findAllClients() {
-        return null;
+    public void printAllClients() {
+
+        if(clients != null) {
+            clients.forEach(System.out:: println);
+        } else {
+            System.out.println("Argument is null");
+        }
     }
 
     @Override

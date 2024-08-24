@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface ClientRepository {
 
-    public List<Client> findAllClients();
+    public void printAllClients();
 
     public Client findClientByLastName(String lastName);
 
