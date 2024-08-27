@@ -1,12 +1,15 @@
 package com.koreanlanguageschool;
 
+import lombok.AllArgsConstructor;
+
 import java.util.List;
 
+@AllArgsConstructor
 public class School {
+
     private String name;
     private Employee employee;
-// String address - TO BE added at a later stage
-
+    // String address - TO BE added at a later stage
     private ClientOperator clientOperator;
 
     public Client createClient(String name, String lastName) {
