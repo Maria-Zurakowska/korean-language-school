@@ -1,16 +1,17 @@
 package com.koreanlanguageschool;
 
-import lombok.AllArgsConstructor;
-
 import java.util.List;
 
-@AllArgsConstructor
 public class School {
 
     private String name;
     private Employee employee;
     // String address - TO BE added at a later stage
     private ClientOperator clientOperator;
+
+    private School(SchoolBuilder schoolBuilder){
+        this.clientOperator = schoolBuilder.clientOperator;
+    }
 
     public Client createClient(String name, String lastName) {
 
@@ -35,5 +36,22 @@ public class School {
     public void deleteClient(Client client) {
 
         clientOperator.deleteClient(client);
+    }
+
+    public static class SchoolBuilder {
+
+        private String name;
+        private Employee employee;
+        // String address - TO BE added at a later stage
+        private ClientOperator clientOperator;
+
+        public SchoolBuilder withClientOperator(ClientOperator clientOperator){
+            this.clientOperator = clientOperator;
+            return this;
+        }
+
+        public School build(){
+            return new School(this);
+        }
     }
 }

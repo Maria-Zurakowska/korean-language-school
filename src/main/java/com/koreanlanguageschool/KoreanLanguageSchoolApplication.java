@@ -13,12 +13,11 @@ public class KoreanLanguageSchoolApplication {
     public static void main(String[] args) {
         //SpringApplication.run(KoreanLanguageSchoolApplication.class, args);
 
-        //getCourseClients();
-        School school = new School("Language School", new Employee("Ania", "Nowak", LocalDate.of(2024, 1, 1)), new ClientOperator());
+        School school = new School.SchoolBuilder().withClientOperator(new ClientOperator()).build();
 
         school.printAllClients();
-        Client annaNowak = school.createClient("Ola", "Nowak");
-        Client kasiaKowal = school.createClient("Kasia", "Kowal");
+        school.createClient("Ola", "Nowak");
+        school.createClient("Kasia", "Kowal");
         school.printAllClients();
     }
 
