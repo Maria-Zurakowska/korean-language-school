@@ -41,6 +41,24 @@ public class ListBasedCourseOperator implements CourseRepository {
   }
 
   @Override
+  public void removeClientFromCourse(String courseName, Client client){
+
+    // sprawdz, czy kurs istnieje
+    Course selectedCourse = courses.stream()
+            .filter(course -> course.getCourseName().equals(courseName))
+            .findAny()
+            .orElseThrow(() -> new IllegalArgumentException("Course not found"));
+
+    // sprawdz czy client jest na List<Client>
+    // tak - usun
+    // nie - nie ma takiego client
+
+    
+
+
+  }
+
+  @Override
   public List<Client> findAllCourseClients(String courseName) {
 
     Course courseByName = courses.stream()

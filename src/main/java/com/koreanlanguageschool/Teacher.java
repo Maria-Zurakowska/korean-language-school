@@ -6,20 +6,19 @@ public class Teacher {
 
   private ListBasedCourseOperator listBasedCourseOperator;
 
-  //edytuj liste uczniow na kursie
-  public Course updateCourseClientList(String courseName, List<Client> clientList){
-    return new Course(courseName, clientList);
-  }
-// pokaz wszystkich uczniow na kursie
-  public Course getCourseClientList(){
-    return null;
+  public void updateCourseClientList(List<Client> courseClients, Course course){
+    listBasedCourseOperator.updateCourseClientList(courseClients, course);
   }
 
-// zapisz ucznia na kurs
-  public void saveCourseClient(Client client){
+  public List<Client> findAllCourseClients(String courseName){
+    return listBasedCourseOperator.findAllCourseClients(courseName);
+  }
+
+  public void registerClientForCourse(Client client, Course course){
+    listBasedCourseOperator.registerClientForCourse(client, course);
 
   }
-// usun ucznia z kursu
+// usun ucznia z kursu // nie mam w course repository
   public void removeCourseClient(Client client){
 
   }
