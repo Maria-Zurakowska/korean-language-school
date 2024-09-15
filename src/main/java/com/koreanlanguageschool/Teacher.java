@@ -6,21 +6,31 @@ public class Teacher {
 
   private ListBasedCourseOperator listBasedCourseOperator;
 
-  public void updateCourseClientList(List<Client> courseClients, Course course){
-    listBasedCourseOperator.updateCourseClientList(courseClients, course);
+  public Course createCourse(String courseName){
+    return listBasedCourseOperator.createCourse(courseName);
+  }
+
+  public Course findCourse(String courseName){
+    return listBasedCourseOperator.findCourse(courseName);
+  }
+
+  public void deleteCourse(String courseName){
+    listBasedCourseOperator.deleteCourse(courseName);
+  }
+
+  public void registerClientForCourse(Client client, Course course){
+    listBasedCourseOperator.registerClientForCourse(client, course);
+  }
+
+  public void removeClientFromCourse(String courseName, Client client){
+    listBasedCourseOperator.removeClientFromCourse(courseName, client);
   }
 
   public List<Client> findAllCourseClients(String courseName){
     return listBasedCourseOperator.findAllCourseClients(courseName);
   }
 
-  public void registerClientForCourse(Client client, Course course){
-    listBasedCourseOperator.registerClientForCourse(client, course);
-
-  }
-// usun ucznia z kursu // nie mam w course repository
-  public void removeCourseClient(Client client){
-
+  public void updateCourseClientList(List<Client> courseClients, Course course){
+    listBasedCourseOperator.updateCourseClientList(courseClients, course);
   }
 }
-
