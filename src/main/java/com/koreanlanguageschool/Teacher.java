@@ -12,9 +12,6 @@ public class Teacher {
   private ListBasedCourseOperator listBasedCourseOperator;
 
   private Teacher(TeacherBuilder teacherBuilder) {
-    this.name = teacherBuilder.name;
-    this.lastName = teacherBuilder.lastName;
-    this.dateOfEmployment = teacherBuilder.dateOfEmployment;
     this.listBasedCourseOperator = teacherBuilder.listBasedCourseOperator;
   }
 
