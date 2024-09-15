@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 @Setter
 @Getter
@@ -16,7 +17,7 @@ public class Course {
 
   private Course(CourseBuilder courseBuilder) {
     this.courseName = courseBuilder.courseName;
-    this.courseClients = courseBuilder.courseClients;
+    this.courseClients = new ArrayList<>(courseBuilder.courseClients);
   }
 
   public static class CourseBuilder {
@@ -37,5 +38,13 @@ public class Course {
     public Course build() {
       return new Course(this);
     }
+  }
+
+  @Override
+  public String toString() {
+    return "Course{" +
+            "courseName='" + courseName + '\'' +
+            ", courseClients=" + courseClients +
+            '}';
   }
 }
