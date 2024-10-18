@@ -58,6 +58,7 @@ public class KoreanLanguageSchoolApplication {
         System.out.println(teacher.findAllCourseClients(courseB.getCourseName()));
         teacher.deleteCourse(courseB.getCourseName());
         System.out.println(teacher.findCourse(courseB.getCourseName()));
+
     }
 
     private static void getCourseClients() {
